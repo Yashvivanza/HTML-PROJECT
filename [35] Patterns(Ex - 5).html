@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Patterns</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .patterns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .box {
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* 1. Striped Pattern */
+    .striped {
+      background:repeating-linear-gradient(45deg,rgb(0, 195, 255),rgb(0, 195, 255) 10px, white 10px, white 20px);
+    }
+
+    /* 2. Checkerboard Pattern */
+    .checkerboard {
+      background: 
+        linear-gradient(45deg, black 25%, transparent 25%),
+        linear-gradient(-45deg, black 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, black 75%),
+        linear-gradient(-45deg, transparent 75%, black 75%);
+      background-size: 40px 40px;
+      background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+      background-color: white;
+    }
+
+    /* 3. Polka Dots Pattern */
+    .dots {
+      background: radial-gradient(red 10%, transparent 11%) repeat;
+      background-size: 30px 30px;
+    }
+
+    /* 4. Diagonal Lines */
+    .diagonal {
+      background: repeating-linear-gradient(
+        -45deg,
+        #8e44ad,
+        #8e44ad 10px,
+        #fff 10px,
+        #fff 20px
+      );
+    }
+
+    /* 5. Grid Squares */
+    .grid {
+      background-image: 
+        linear-gradient(grey, transparent 1px),
+        linear-gradient(90deg, grey 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple CSS Patterns</h2>
+
+  <div class="patterns">
+    <div class="box striped">Striped</div>
+    <div class="box checkerboard">Checkerboard</div>
+    <div class="box dots">Polka Dots</div>
+    <div class="box diagonal">Diagonal</div>
+    <div class="box grid">Grid</div>
+  </div>
+
+</body>
+</html>
