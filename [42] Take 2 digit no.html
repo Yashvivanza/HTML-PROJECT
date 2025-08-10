@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digit Multiplication</title>
+</head>
+<body>
+  <h2>Digit Multiplication</h2>
+  Enter a 2-digit number: <input type="number" id="num" oninput="calculate()">
+  <p id="output"></p>
+
+  <script>
+    function calculate() {
+      let num = document.getElementById("num").value;
+
+      if (num.length === 2) { // Only run if exactly 2 digits
+        let firstDigit = parseInt(num[0]);
+        let secondDigit = parseInt(num[1]);
+
+        let result = 1;
+        for (let i = 0; i < secondDigit; i++) {
+          result *= firstDigit;
+        }
+
+        document.getElementById("output").innerHTML =
+          firstDigit + " is multiplied " + secondDigit + " times<br>" +
+          "Answer is: " + result;
+      } else {
+        document.getElementById("output").innerHTML = "";
+      }
+    }
+  </script>
+</body>
+</html>
