@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Area Calculator</title>
+</head>
+<body>
+  <h2>Area Calculator</h2>
+  <h3>Triangle</h3>
+  Base: <input type="number" id="base"><br><br>
+  Height: <input type="number" id="height"><br><br>
+  <button onclick="calcTriangle()">Calculate Triangle Area</button>
+  <p id="triangleResult"></p>
+
+  <h3>Rectangle</h3>
+  Length: <input type="number" id="length"><br><br>
+  Width: <input type="number" id="width"><br><br>
+  <button onclick="calcRectangle()">Calculate Rectangle Area</button>
+  <p id="rectangleResult"></p>
+  <script>
+    function calcTriangle() {
+      let base = document.getElementById("base").value;
+      let height = document.getElementById("height").value;
+      let area = 0.5 * base * height;
+      document.getElementById("triangleResult").innerText = "Area of Triangle: " + area;
+    }
+
+    function calcRectangle() {
+      let length = document.getElementById("length").value;
+      let width = document.getElementById("width").value;
+      let area = length * width;
+      document.getElementById("rectangleResult").innerText = "Area of Rectangle: " + area;
+    }
+  </script>
+</body>
+</html>
